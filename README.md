@@ -1,0 +1,2 @@
+# Envirominder
+This website is designed to be set as your browser's startup page. Every morning when you first search something, this website will give you a tip on how to be more environmentally conscious, or a little challenge on how to be more environmentally friendly today. To avoid being a nuissance, this will only happen the first time you open your browser each day, any other time you'll just be forwarded to your usual startup page.
