@@ -1,0 +1,17 @@
+{
+        "manifest_version": 3,
+        "name": "Envirominder",
+        "version": "0.1",
+        "description": "a daily reminder to be kind to the planet",
+        
+        "permissions": ["storage"],
+
+        "action": {
+                "default_popup": "popup.html",
+                "default_icon": "envirominder icon.png"
+        },
+
+        "icons": {
+                "128": "envirominder icon.png"
+        }
+}
