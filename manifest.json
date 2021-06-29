@@ -3,8 +3,12 @@
         "name": "Envirominder",
         "version": "0.1",
         "description": "a daily reminder to be kind to the planet",
-        
+
         "permissions": ["storage"],
+
+        "background": {
+                "service_worker": "background.js"
+        },
 
         "action": {
                 "default_popup": "popup.html",
