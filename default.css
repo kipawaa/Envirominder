@@ -1,37 +1,39 @@
 /* general aesthetic */
 body {
         font-family: Gill Sans, sans-serif;
-        background-color: #cfceb4;
+        background-color: #ffffff;
         text-align: center;
 }
 
 /**************** headers ****************/
 h1, h2, h3, h4, h5, h6 {
-        color: #173613;
+        color: #2dad68;
 }
 
 /*************** paragraph ****************/
 p {
-        color: #173613;
+        color: #2dad68;
+        font-size: 12px;
 }
 
 /************** text fields **************/
 label {
-        color: #173613;
+        color: #2dad68;
 }
 
 /**************** links *******************/
 a {
-        color: #173613;
+        color: #2dad68;
 }
 
 a:hover {
-        color: #173613;
+        color: #2dad68;
 }
 
 button {
-        outline: none;
-        margin: 10px;
         border: none;
-        border-radius: 2px;
+        padding: 4px 8px;
+        color: #ffffff;
+        background-color: #2dad68;
+        border-radius: 4px;
 }
