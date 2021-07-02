@@ -16,6 +16,8 @@
         },
 
         "icons": {
-                "128": "envirominder icon.png"
+                "16": "envirominder icon-16.png",
+                "48": "envirominder icon-48.png",
+                "128": "envirominder icon-128.png"
         }
 }
