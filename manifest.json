@@ -4,7 +4,7 @@
         "version": "0.1",
         "description": "a daily reminder to be kind to the planet",
 
-        "permissions": ["storage"],
+        "permissions": ["storage", "notifications"],
 
         "background": {
                 "service_worker": "background.js"
