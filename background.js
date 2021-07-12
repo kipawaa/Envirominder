@@ -1,9 +1,13 @@
 chrome.runtime.onStartup.addListener(function() {
     
     const d = new Date();
+
+    let currentTime = Math.floor(d.getTime() / 86400000);
     
     chrome.storage.sync.get("lastAccess", function(lastAccessObj) {
-        if (lastAccessObj.lastAccess < Math.floor(d.getTime() / 86400000)) {
+        console.log("last access: " + lastAccessObj.lastAccess);
+        console.log("current date: " + currentTime);
+        if (lastAccessObj.lastAccess < currentTime) {
             // notification
             console.log("adding notification");
             chrome.notifications.create("dailyTip", {
@@ -17,5 +21,5 @@ chrome.runtime.onStartup.addListener(function() {
         }
     });
 
-    chrome.storage.sync.set({"lastAccess": Math.floor(d.getTime() / 86400000)}, function() {console.log("saved date")});
+    chrome.storage.sync.set({"lastAccess": currentTime}, function() {console.log("saved date")});
 });
