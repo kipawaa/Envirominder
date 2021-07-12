@@ -1,0 +1,55 @@
+html {
+        height: 1vh;
+        margin: auto;
+}
+
+/* general aesthetic */
+body {
+        font-family: Gill Sans, sans-serif;
+        background-color: #ffffff;
+        text-align: center;
+        margin: 15px;
+}
+
+/*************** paragraph ****************/
+p {
+        font-size: 12px;
+}
+
+button {
+        border: none;
+        padding: 4px 8px;
+        color: #ffffff;
+        background-color: #2dad68;
+        border-radius: 8px;
+}
+
+.text {
+        color: #2dad68;
+}
+
+#howDoesThisHelpButton {
+        margin-bottom: 10px;
+}
+
+#howDoesThisHelpText {
+        visibility: hidden;
+        height: 0px;
+}
+
+#getTipButton {
+        margin-bottom: 12px;
+}
+
+#infoLink {
+        text-decoration: none;
+        color: #2dad68;
+        font-size: 12px;
+        padding-top: 20px;
+        border-radius: 8px;
+        margin:8px;
+}
+
+#infoLink:hover {
+        color: #000000;
+}
