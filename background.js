@@ -1,10 +1,9 @@
-chrome.runtime.onStartup.addListener(function() {
-    
+chrome.runtime.onStartup.addListener(async function() {
     const d = new Date();
 
     let currentTime = Math.floor(d.getTime() / 86400000);
     
-    chrome.storage.sync.get("lastAccess", function(lastAccessObj) {
+    await chrome.storage.sync.get("lastAccess", function(lastAccessObj) {
         console.log("last access: " + lastAccessObj.lastAccess);
         console.log("current date: " + currentTime);
         if (lastAccessObj.lastAccess < currentTime) {
@@ -12,7 +11,7 @@ chrome.runtime.onStartup.addListener(function() {
             console.log("adding notification");
             chrome.notifications.create("dailyTip", {
                     type: "basic",
-                    iconUrl: "Envirominder Icon.png",
+                    iconUrl: "Envirominder Icon-128.png",
                     title: "Daily Tip!",
                     message: "Open the extension to get your daily tip!"
                 },
