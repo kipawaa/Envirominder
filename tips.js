@@ -1,4 +1,7 @@
 // get page items
+const html = document.documentElement;
+const body = document.body;
+
 const helpButton = document.getElementById("howDoesThisHelpButton");
 const helpText = document.getElementById("howDoesThisHelpText");
 const getTipButton = document.getElementById("getTipButton");
@@ -11,21 +14,27 @@ window.onload = getTip;
 
 
 async function howDoesThisHelp() {
-    helpText.style.visibility = "visible";
-    helpText.style.height = "auto";
-    try {
-        const response = await fetch("tips.txt");
-        const text = await response.text();
+    if (helpText.style.visibility === "visible") {
+        helpText.style.visibility = "hidden";
+        helpText.style.height = "0px";
+    } else {
+        try {
+            const response = await fetch("tips.txt");
+            const text = await response.text();
 
-        let howTipsHelp = text.split("\n");
-        
-        chrome.storage.sync.get("index", function(indexObj) {
-            helpText.textContent = howTipsHelp[indexObj.index + 1];
-        });
+            let howTipsHelp = text.split("\n");
+            
+            chrome.storage.sync.get("index", function(indexObj) {
+                helpText.textContent = howTipsHelp[indexObj.index + 1];
+            });
+            
+            helpText.style.height = "auto";
+            helpText.style.visibility = "visible";
 
-    } catch(err) {
-        console.err("failed to get how this helps: " + err);
-        helpText.textContent = "Failed to get from database how this is helpful, sorry!";
+        } catch(err) {
+            console.err("failed to get how this helps: " + err);
+            helpText.textContent = "Failed to get from database how this is helpful, sorry!";
+        }
     }
 }
 
