@@ -68,6 +68,8 @@ async function getNewTip() {
         
         index -= (index % 2 == 1);
 
+        let tipsLen = tips.length;
+        chrome.storage.sync.set({"tipsLen": tipsLen}, function() {console.log("tipsLen: " + tipsLen)});
         chrome.storage.sync.set({"index": index}, function() {console.log("index: " + index)});
 
         tip.textContent = tips[index];

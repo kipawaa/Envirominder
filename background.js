@@ -17,6 +17,15 @@ chrome.runtime.onStartup.addListener(async function() {
                 },
                 function() {console.log("notification sent")}
             );
+
+            // new tip
+            chrome.storage.sync.get("tipsLen", function(tipsLenObj) {
+                let index = Math.floor(Math.random() * (tipsLenObj.tipsLen - 1));
+        
+                index -= (index % 2 == 1);
+
+                chrome.storage.sync.set({"index":  index}, function() {console.log("index: " + index)});
+            });
         }
     });
 
